@@ -1,0 +1,16 @@
+package has_binaries
+
+repo_has_binaries[result] {
+    some i
+    data.resources.Metric[i].meta.name== "version_scorecard"
+    data.resources.Metric[i].meta.parent_kind == "RepositoryVersion"
+    data.resources.Metric[i].meta.parent_uuid == data.resources.RepositoryVersion[_].uuid 
+
+    data.resources.Metric[i].spec.metric_values.scorefactor.score_factor_list.score_factors[_].id == "hasBinaries"
+    
+  result = {
+    "Endor": {
+      "RepositoryVersion": data.resources.Metric[i].meta.parent_uuid,
+    }
+  }
+}
