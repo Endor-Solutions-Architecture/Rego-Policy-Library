@@ -2,8 +2,8 @@ package main
 
 package_names := [
     "npm://pnpm_test@1.0.0", 
-    "npm://procurement-app@1.0.0",
-    "npm://@og-pro/custom-form-service@1.0.0"
+    "npm://test-app@1.0.0",
+    "npm://@tt-pro/custom-form-service@1.0.0"
 ]
 
 test_dependency(finding) {
